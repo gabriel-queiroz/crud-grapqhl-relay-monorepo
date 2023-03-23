@@ -6,9 +6,18 @@
   "author": "gabriel-queiroz <gabrielqueirozzn@gmail.com>",
   "license": "MIT",
   "private": true,
+  "devDependencies": {
+    "@monorepo/eslint": "*",
+    "husky": "^8.0.0"
+  },
   "workspaces": {
     "packages": [
-      "apps/*"
+      "apps/*",
+      "packages/*"
     ]
+  },
+  "scripts": {
+    "eslint": "eslint .",
+    "prepare": "husky install"
   }
 }
