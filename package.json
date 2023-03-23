@@ -1,0 +1,14 @@
+{
+  "name": "monorepo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:gabriel-queiroz/crud-grapqhl-relay-monorepo.git",
+  "author": "gabriel-queiroz <gabrielqueirozzn@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "apps/*"
+    ]
+  }
+}
