@@ -7,12 +7,17 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
-    "@monorepo/eslint": "*"
+    "@monorepo/eslint": "*",
+    "husky": "^8.0.0"
   },
   "workspaces": {
     "packages": [
       "apps/*",
       "packages/*"
     ]
+  },
+  "scripts": {
+    "eslint": "eslint .",
+    "prepare": "husky install"
   }
 }
