@@ -6,9 +6,13 @@
   "author": "gabriel-queiroz <gabrielqueirozzn@gmail.com>",
   "license": "MIT",
   "private": true,
+  "devDependencies": {
+    "@monorepo/eslint": "*"
+  },
   "workspaces": {
     "packages": [
-      "apps/*"
+      "apps/*",
+      "packages/*"
     ]
   }
 }
