@@ -26,6 +26,7 @@ export const UserSchema = new mongoose.Schema(
 export interface IUser extends Document {
   firstName: string
   lastName: string
+  city: string
   createdAt: Date
   updatedAt: Date
 }
