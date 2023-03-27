@@ -5,27 +5,20 @@ import logger from 'koa-logger'
 import bodyParser from 'koa-bodyparser'
 import koaPlayground from 'graphql-playground-middleware-koa'
 import { graphqlHTTP } from 'koa-graphql'
-import userSchema from './schema/userSchema'
-
+import schema from './schema/schema'
+import { mongooseDbConnection } from './database'
 const router = new Router()
 const app = new Koa()
 
 app.use(bodyParser())
 app.use(logger())
 app.use(cors())
-
-router.get('/welcome', async ctx => {
-  ctx.body = {
-    date: 'abc',
-    name: 'gabriel',
-    lastName: 'queiroz'
-  }
-})
+mongooseDbConnection()
 
 router.all(
   '/graphql',
   graphqlHTTP({
-    schema: userSchema,
+    schema,
     graphiql: true
   })
 )
