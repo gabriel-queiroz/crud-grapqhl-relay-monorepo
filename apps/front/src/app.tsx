@@ -1,9 +1,11 @@
 import React from 'react'
+import { Test } from './pages/test'
+import { RelayProvider } from './relay'
 import { GlobalStyle } from './styles/global'
 
-export const App = (): JSX.Element => (
-  <div>
+export const App = () => (
+  <RelayProvider>
     <GlobalStyle />
-    <h1>monorepo crud</h1>
-  </div>
+    <Test />
+  </RelayProvider>
 )
