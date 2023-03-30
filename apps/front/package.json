@@ -10,22 +10,44 @@
     "@babel/preset-typescript": "^7.21.0",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
+    "@types/react-relay": "^14.1.3",
+    "@types/relay-runtime": "^14.1.10",
     "@types/styled-components": "^5.1.26",
     "babel-loader": "^9.1.2",
+    "babel-plugin-relay": "^15.0.0",
     "clean-webpack-plugin": "^4.0.0",
+    "graphql": "^16.6.0",
     "html-webpack-plugin": "^5.5.0",
+    "relay-compiler": "^15.0.0",
+    "relay-compiler-language-typescript": "^15.0.1",
     "typescript": "^5.0.2",
     "webpack": "^5.76.3",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.13.1"
   },
   "dependencies": {
+    "add": "^2.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "styled-components": "^5.3.9"
+    "react-relay": "^15.0.0",
+    "relay-config": "^12.0.1",
+    "relay-runtime": "^15.0.0",
+    "styled-components": "^5.3.9",
+    "yarn": "^1.22.19"
   },
   "scripts": {
-    "dev": "webpack serve --mode development",
-    "build": "webpack --mode production --progress"
+    "dev": "yarn relay && webpack serve --mode development",
+    "build": "webpack --mode production --progress",
+    "relay": "node_modules/.bin/relay-compiler"
+  },
+  "relay": {
+    "src": "./src",
+    "schema": "./schema.graphql",
+    "language": "typescript",
+    "exclude": [
+      "**/node_modules/**",
+      "**/__mocks__/**",
+      "**/__generated__/**"
+    ]
   }
 }

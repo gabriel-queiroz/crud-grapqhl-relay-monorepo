@@ -18,6 +18,7 @@
   },
   "scripts": {
     "server:dev": "yarn workspace @monorepo/server server:dev",
+    "front:dev": "yarn workspace @monorepo/front dev",
     "eslint": "eslint --cache --max-warnings=-1",
     "prepare": "husky install"
   }

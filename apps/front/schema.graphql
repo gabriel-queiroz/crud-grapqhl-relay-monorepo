@@ -1,0 +1,58 @@
+type Query {
+  users(page: Int, pageSize: Int): Users
+}
+
+type Users {
+  totalPages: Int
+  currentPage: Int
+  totalItems: Int
+  users: [User]
+}
+
+type User {
+  _id: String!
+  firstName: String!
+  lastName: String!
+  city: String!
+}
+
+type Mutation {
+  createUser(input: CreateUserInput!): CreateUserPayload
+  deleteUserById(input: DeleteUserByIdInput!): DeleteUserByIdPayload
+  updateUser(input: UpdateUserInput!): UpdateUserPayload
+}
+
+type CreateUserPayload {
+  data: String
+  clientMutationId: String
+}
+
+input CreateUserInput {
+  firstName: String!
+  lastName: String!
+  city: String!
+  clientMutationId: String
+}
+
+type DeleteUserByIdPayload {
+  message: String
+  clientMutationId: String
+}
+
+input DeleteUserByIdInput {
+  id: String!
+  clientMutationId: String
+}
+
+type UpdateUserPayload {
+  message: String
+  clientMutationId: String
+}
+
+input UpdateUserInput {
+  id: String!
+  firstName: String
+  lastName: String
+  city: String
+  clientMutationId: String
+}
