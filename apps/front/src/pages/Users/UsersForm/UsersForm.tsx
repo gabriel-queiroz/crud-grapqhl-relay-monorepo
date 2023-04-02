@@ -1,3 +1,3 @@
 import React from 'react'
-
-export const UsersForm = () => <div> users form</div>
+import { Container } from '@monorepo/ui'
+export const UsersForm = () => <Container> users form</Container>
