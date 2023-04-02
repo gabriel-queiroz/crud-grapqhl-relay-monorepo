@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, DataTable, Heading, TableColumnType } from '@monorepo/ui'
+import { Button } from '@monorepo/ui/components/Button/Button.styles'
 
 export const Userslist = () => {
   const columns: TableColumnType[] = [
@@ -44,6 +45,7 @@ export const Userslist = () => {
         title="Usuários"
         description="Esse são os usuários da plataforma, caso deseje você pode criar, editar ou excluir qualquer um"
       />
+      <Button>Adicionar usuário</Button>
       <DataTable columns={columns} datasource={datasource} />
     </Container>
   )
